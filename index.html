@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choudharygroup</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+  </head>
+  <body>
+    <!-- -----------------------------------------Header--------------------------------------- -->
+    <div class="header">
+      <button onclick="openNav()" class="navbar-toggler" type="button">
+        <i class="ri-menu-line sidebar-btn"></i>
+      </button>
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Company
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="services.html">Our Services</a>
+            <a href="terms.html">Term & Conditions</a>
+            <a href="team.html">Meet Our Team</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Career
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="listing.html">Career Listing</a>
+            <a href="career-details.html">Career Details</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact Us</a>
+        <div class="header-button">
+          <a href="login.html" class="Btn"></a>
+        </div>
+      </div>
+      <!-- open sidebar -->
+      <aside class="sidepanel" id="mysidepanel">
+        <div class="sidebar flex">
+          <button
+            onclick="closeNav()"
+            type="button"
+            class="closebtn btn_hover1"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- -----------side menus--------------- -->
+        <ul>
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="terms.html" class="nav-link">Term & Conditions</a></li>
+          <li><a href="team.html" class="nav-link">Meet Our Team</a></li>
+          <li>
+            <a href="bussiness-details.html" class="nav-link">Career Listing</a>
+          </li>
+          <li>
+            <a href="bussiness-details.html" class="nav-link">Career Details</a>
+          </li>
+          <li>
+            <a href="contact-page2/contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="nav-right flex">
+        <i onclick="rightOpenNav()" class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------Home--------------------------------------- -->
+    <div class="hero">
+      <div class="video-container">
+        <div class="video">
+          <video src="images/home1.mp4" autoplay loop muted></video>
+          <div class="overlay"></div>
+        </div>
+        <div class="on-overlay">
+          <div class="logo">
+            <img src="images/logo.png" />
+          </div>
+          <div class="hero-content">
+            <p>Discover Your Dream Home</p>
+            <a href="login.html" class="Btn"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -----------------------------------------About us--------------------------------------- -->
+    <section class="about">
+      <div class="container">
+        <div class="about-content">
+          <h1>About Us</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ex
+            minus. Sequi neque veritatis amet inventore distinctio dolore nemo
+            cumque harum corporis dignissimos necessitatibus nulla voluptates
+            rem fugit, eligendi deleniti incidunt pariatur doloremque non
+            architecto.
+          </p>
+          <a href="#" class="Btn"></a>
+        </div>
+        <div class="about-img">
+          <img src="images/about1.jpg" alt="" />
+        </div>
+      </div>
+      <div class="short-info-container">
+        <div class="short-info">
+          <i class="fa-solid fa-flag"></i>
+          <div class="content">
+            <h1>125k+</h1>
+            <p>Social Followers</p>
+          </div>
+        </div>
+        <div class="short-info">
+          <i class="fa-solid fa-users"></i>
+          <div class="content">
+            <h1>1252+</h1>
+            <p>Happy Clients</p>
+          </div>
+        </div>
+        <div class="short-info">
+          <i class="fa-solid fa-person-chalkboard"></i>
+          <div class="content">
+            <h1>124+</h1>
+            <p>Projects Done</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------Services--------------------------------------- -->
+    <div class="services-section">
+      <section class="services">
+        <div class="container">
+          <div class="services-content">
+            <h1>What We Offer</h1>
+            <p>
+              From Real Estate Dreams to Investment Realities - Choudhary Group
+              of Companies is your trusted partner every step of the way.
+            </p>
+          </div>
+          <div class="service-box-container">
+            <div class="service-box">
+              <i class="ri-community-fill"></i>
+              <h1>Market Research</h1>
+              <p>
+                Stay ahead of the curve with our in-depth market research and
+                analysis.
+              </p>
+              <a href="#">View Details</a>
+            </div>
+
+            <div class="service-box">
+              <i class="ri-money-pound-circle-fill"></i>
+              <h1>Financial Planning</h1>
+              <p>
+                Our team assists in developing financial strategies tailored to
+                your real estate and investment objectives.
+              </p>
+              <a href="#">View Details</a>
+            </div>
+
+            <div class="service-box">
+              <i class="ri-home-smile-fill"></i>
+              <h1>Investment Advisory</h1>
+              <p>
+                We help you make smart investment choices to grow your financial
+                portfolio.
+              </p>
+              <a href="#">View Details</a>
+            </div>
+
+            <div class="service-box">
+              <i class="ri-chat-smile-3-fill"></i>
+              <h1>Financial Advisors</h1>
+              <p>
+                We offer specialized departments for continental transports.
+              </p>
+              <a href="#">View Details</a>
+            </div>
+
+            <div class="service-box">
+              <i class="ri-database-fill"></i>
+              <h1>Property sales & managment</h1>
+              <p>
+                Whether you're looking to buy, sell, or manage a property, we're
+                here to assist you.
+              </p>
+              <a href="#">View Details</a>
+            </div>
+
+            <div class="service-box">
+              <i class="ri-building-2-fill"></i>
+              <h1>Real estate consultation</h1>
+              <p>
+                Our experts provide valuable insights and advice, ensuring you
+                make informed decisions.
+              </p>
+              <a href="#">View Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- -----------------------------------------FAQs--------------------------------------- -->
+    <div class="faq-section">
+      <section class="faq">
+        <div class="container">
+          <div class="services-content">
+            <div class="faq-animation">
+              <i class="ri-chat-history-fill"></i>
+            </div>
+            <h1>Frequently asked questions</h1>
+            <p>
+              Feeling inquisitive? Have a read through some of our FAQs or
+              contact our supporters for help
+            </p>
+          </div>
+          <!-- accordion -->
+          <div class="value__accordion-item">
+            <header class="value__accordion-header">
+              <div class="value__accordion-icon">
+                <i class="ri-shield-cross-fill"></i>
+              </div>
+              <h3 class="value__accordion-title">
+                Can i cancel my subscribtion at any time ?
+              </h3>
+              <div class="value__accordion-arrow">
+                <i class="ri-arrow-down-s-fill"></i>
+              </div>
+            </header>
+            <div class="value__accordion-content">
+              <p class="value__accordion-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptatum culpa deserunt ipsam ex tempora nobis?
+              </p>
+            </div>
+          </div>
+
+          <div class="value__accordion-item">
+            <header class="value__accordion-header">
+              <div class="value__accordion-icon">
+                <i class="ri-rss-line"></i>
+              </div>
+              <h3 class="value__accordion-title">
+                How can i watch my subscribtion
+              </h3>
+              <div class="value__accordion-arrow">
+                <i class="ri-arrow-down-s-fill"></i>
+              </div>
+            </header>
+            <div class="value__accordion-content">
+              <p class="value__accordion-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore perspiciatis assumenda dolorem quia minima unde?
+                Reiciendis iste praesentium itaque quis!
+              </p>
+            </div>
+          </div>
+
+          <div class="value__accordion-item">
+            <header class="value__accordion-header">
+              <div class="value__accordion-icon">
+                <i class="ri-discount-percent-fill"></i>
+              </div>
+              <h3 class="value__accordion-title">
+                Is there a discount when paid annually
+              </h3>
+              <div class="value__accordion-arrow">
+                <i class="ri-arrow-down-s-fill"></i>
+              </div>
+            </header>
+            <div class="value__accordion-content">
+              <p class="value__accordion-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+                voluptate. Error officiis aperiam alias sit!
+              </p>
+            </div>
+          </div>
+
+          <div class="value__accordion-item">
+            <header class="value__accordion-header">
+              <div class="value__accordion-icon">
+                <i class="ri-account-pin-circle-fill"></i>
+              </div>
+              <h3 class="value__accordion-title">
+                I have an issue with my account
+              </h3>
+              <div class="value__accordion-arrow">
+                <i class="ri-arrow-down-s-fill"></i>
+              </div>
+            </header>
+            <div class="value__accordion-content">
+              <p class="value__accordion-description">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                impedit voluptatibus mollitia odio quas reiciendis earum alias
+                atque minima odit.
+              </p>
+            </div>
+          </div>
+
+          <div class="value__accordion-item">
+            <header class="value__accordion-header">
+              <div class="value__accordion-icon">
+                <i class="ri-id-card-fill"></i>
+              </div>
+              <h3 class="value__accordion-title">
+                What happens if i dont renew my license after one year ?
+              </h3>
+              <div class="value__accordion-arrow">
+                <i class="ri-arrow-down-s-fill"></i>
+              </div>
+            </header>
+            <div class="value__accordion-content">
+              <p class="value__accordion-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Dolorum impedit totam libero perferendis itaque, voluptate nemo
+                minus optio reiciendis unde!
+              </p>
+            </div>
+          </div>
+
+          <div class="value__accordion-item">
+            <header class="value__accordion-header">
+              <div class="value__accordion-icon">
+                <i class="ri-question-fill"></i>
+              </div>
+              <h3 class="value__accordion-title">Do You have a free trail ?</h3>
+              <div class="value__accordion-arrow">
+                <i class="ri-arrow-down-s-fill"></i>
+              </div>
+            </header>
+            <div class="value__accordion-content">
+              <p class="value__accordion-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                commodi atque consequatur rerum sint sed, tempora accusamus
+                impedit fugiat qui?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!----------------------------------------- Testimonial ------------------------------------------->
+
+    <section class="view__section section" id="views-section">
+      <div class="container">
+        <div class="services-content">
+          <h1>What our customers are saying</h1>
+          <p>
+            Hear from our Clients who have saved thousands on their Investments
+            and Buying properties.
+          </p>
+        </div>
+        <div class="popular">
+          <div class="swiper views__swiper">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="swiper__client-msg">
+                    <p>
+                      I had an amazing experience working with Choudhary Group
+                      of Companies. They helped me find the perfect home that
+                      met all my needs. I couldn't be happier with their
+                      services. <br />
+                      ⭐️⭐️⭐️⭐️⭐️
+                    </p>
+                  </div>
+                  <div class="swiper__client-data grid">
+                    <div class="client-data">
+                      <p class="views__data2">Haroon Durrani</p>
+                      <p class="views__data1">Happy Client</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="swiper__client-msg">
+                    <p>
+                      Choudhary Group of Companies took the time to understand
+                      my unique real estate needs and found me the perfect
+                      property. Their dedication to client satisfaction is
+                      commendable. <br />
+                      ⭐️⭐️⭐️⭐️⭐️
+                    </p>
+                  </div>
+                  <div class="swiper__client-data grid grid-two-column">
+                    <div class="client-data">
+                      <p class="views__data2">Maryam Hussain</p>
+                      <p class="views__data1">Happy Client</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="swiper__client-msg">
+                    <p>
+                      Choudhary Group of Companies has made the process of
+                      selling my property incredibly smooth and stress-free.
+                      Their team's professionalism and expertise are truly
+                      impressive. <br />
+                      ⭐️⭐️⭐️⭐️⭐️
+                    </p>
+                  </div>
+                  <div class="swiper__client-data grid grid-two-column">
+                    <div class="client-data">
+                      <p class="views__data2">Fatima Ali</p>
+                      <p class="views__data1">Investor</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="swiper__client-msg">
+                    <p>
+                      awesome property for our group of ten. The whole group had
+                      a great time. Would appreciate the ceo Shazad for being so
+                      friendly, really got along with us. <br />
+                      ⭐️⭐️⭐️⭐️⭐️
+                    </p>
+                  </div>
+                  <div class="swiper__client-data grid grid-two-column">
+                    <div class="client-data">
+                      <p class="views__data2">Shaista Akber</p>
+                      <p class="views__data1">Happy Client</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="swiper__client-msg">
+                    <p>
+                      Thanks Chaudary Group for this lovely apartment. I was
+                      greeted promptly upon arrival. Got checked into my
+                      apartment. The room was clean and comfortable. Air
+                      conditioning worked well. The staff is amazing which makes
+                      this service the best <br />
+                      ⭐️⭐️⭐️⭐️⭐️
+                    </p>
+                  </div>
+                  <div class="swiper__client-data grid grid-two-column">
+                    <div class="client-data">
+                      <p class="views__data2">Syed Ali Hashmi</p>
+                      <p class="views__data1">Client</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="swiper__client-msg">
+                    <p>
+                      Chaudary Group exceeded my expectations with their
+                      impeccable service and expert knowledge. From start to
+                      finish, they made my journey unforgettable.! <br />
+                      ⭐️⭐️⭐️⭐️⭐️
+                    </p>
+                  </div>
+                  <div class="swiper__client-data grid grid-two-column">
+                    <div class="client-data">
+                      <p class="views__data2">Wali Kazmi</p>
+                      <p class="views__data1">Client</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----------------------------------------- Banner ------------------------------------------->
+    <section class="banner">
+      <div class="container">
+        <div class="services-content">
+          <h1>Lets Explore this world</h1>
+          <p>
+            "Embark on your next adventure with confidence and ease. Let us turn
+            your travel dreams into unforgettable experiences."
+          </p>
+          <a href="#" class="Btn"></a>
+        </div>
+        <div class="box">
+          <div class="services-content">
+            <h1>NewsLetter</h1>
+            <p>Subscribe For latest Updates</p>
+          </div>
+          <form action="" id="newsletter">
+            <input
+              type="email"
+              id="email"
+              name=""
+              placeholder="Drop your email"
+              class="newsletter"
+            />
+            <button class="send-btn">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!----------------------------------------- Footer ------------------------------------------->
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" />
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <div class="footer-info-container">
+            <div class="address">
+              <i class="ri-map-pin-2-fill"></i>
+              <p>
+                Floor, plot # C, M-1, Mezzanine, 11 28th St, Tauheed Commercial
+                Area Defence V Defence Housing Authority, Karachi, Karachi City,
+                Sindh 75500
+              </p>
+            </div>
+          </div>
+
+          <div class="footer-info-container">
+            <div class="tele">
+              <i class="ri-phone-fill"></i>
+              <a href="tel:+923353036639">Tel:+92-335-3036639</a>
+              <a href="tel:+923353036639">Fax:+92-335-3036639</a>
+            </div>
+          </div>
+
+          <div class="footer-info-container">
+            <div class="mail">
+              <i class="ri-mail-unread-fill"></i>
+              <a href="mailto:hamzashakeeldurrani77@gmail.com"
+                >hamzashakeeldurrani77@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="socials">
+          <div class="facebook-cover">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </div>
+          <div class="insta-cover">
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
+
+    <!----------------------------------------- backtotop ------------------------------------------->
+
+    <button onclick="scrollToTop()" class="btn-hover2" id="backToTop">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="firebase.js"></script>
+    <script src="swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

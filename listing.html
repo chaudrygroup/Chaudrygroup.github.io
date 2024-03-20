@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Listing</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="carrer.css" />
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <!-- -----------------------------------------Header--------------------------------------- -->
+    <div class="header">
+      <button onclick="openNav()" class="navbar-toggler" type="button">
+        <i class="ri-menu-line sidebar-btn"></i>
+      </button>
+      <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Company
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="services.html">Our Services</a>
+            <a href="terms.html">Term & Conditions</a>
+            <a href="team.html">Meet Our Team</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Career
+            <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="listing.html">Career Listing</a>
+            <a href="career-details.html">Career Details</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact Us</a>
+        <div class="header-button">
+          <a href="login.html" class="Btn"></a>
+        </div>
+      </div>
+      <!-- open sidebar -->
+      <aside class="sidepanel" id="mysidepanel">
+        <div class="sidebar flex">
+          <button
+            onclick="closeNav()"
+            type="button"
+            class="closebtn btn_hover1"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- -----------side menus--------------- -->
+        <ul>
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="terms.html" class="nav-link">Term & Conditions</a></li>
+          <li><a href="team.html" class="nav-link">Meet Our Team</a></li>
+          <li>
+            <a href="bussiness-details.html" class="nav-link">Career Listing</a>
+          </li>
+          <li>
+            <a href="bussiness-details.html" class="nav-link">Career Details</a>
+          </li>
+          <li>
+            <a href="contact-page2/contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="nav-right flex">
+        <i onclick="rightOpenNav()" class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------Hero listing---------------------------------- -->
+    <section class="listing">
+      <div class="container">
+        <div class="services-content">
+          <h1>Take a look at our current openings</h1>
+          <p>We’re Always Searching For Amazing People to Join Our Team.</p>
+        </div>
+        <div class="lisitng-img-container">
+          <div class="listing-img">
+            <img src="images/listing 1.png" alt="listing" />
+          </div>
+          <div class="hiring-img">
+            <img src="images/hiring2.jpg" alt="hiring" />
+          </div>
+          <div class="arrow">
+            <i class="ri-arrow-down-double-line"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------why apply---------------------------------- -->
+    <section class="listing">
+      <div class="container">
+        <div class="services-content">
+          <h1>Why You Should Consider Applying</h1>
+          <p>
+            We`re lively, not corporate. We have the energy and boldness of a
+            startup and the expertise and pragmatism of a scale-up. All in one
+            place.
+          </p>
+        </div>
+        <div class="box-container">
+          <div class="box">
+            <a href="contact.html"><i class="fa-solid fa-person-rays"></i></a>
+            <a href="contact.html"><h1>Connected</h1></a>
+            <p>
+              We come together wherever we are – across time zones, regions,
+              offices and screens. You will receive support from your teammates
+              anytime and anywhere.
+            </p>
+          </div>
+          <div class="box">
+            <a href="contact.html"><i class="fa-solid fa-people-group"></i></a>
+            <a href="contact.html"><h1>Inclusive</h1></a>
+            <p>
+              Our teams reflect the rich diversity of our world, with equitable
+              access to opportunity for everyone. No matter where you come from
+            </p>
+          </div>
+          <div class="box">
+            <a href="contact.html"
+              ><i class="fa-solid fa-flag-checkered"></i
+            ></a>
+            <a href="contact.html"><h1>Flexible</h1></a>
+            <p>
+              We believe in your freedom to work when and how you work best, to
+              help us all thrive. Only freedom and independent work can bring
+              out the best in you.
+            </p>
+          </div>
+          <div class="box">
+            <a href="contact.html"
+              ><i class="fa-solid fa-square-caret-up"></i
+            ></a>
+            <a href="contact.html"><h1>Persuasion</h1></a>
+            <p>
+              Knowing that there is real value to be gained from helping people
+              to simplify whatever it is that they do and bring.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------Career opertunities---------------------------------- -->
+    <section class="listing">
+      <div class="container">
+        <div class="services-content">
+          <h1>Career Opportunities</h1>
+          <p>
+            Explore our open roles for working totally remotely, from the office
+            or somewhere in between.
+          </p>
+        </div>
+        <div class="career-container">
+          <div class="box">
+            <div class="heading">
+              <a href="#"><i class="fa-solid fa-people-group"></i></a>
+              <a href="#"
+                ><h1>
+                  Senior Full Stack Engineer, Creator Success Full Time
+                </h1></a
+              >
+            </div>
+            <p>
+              Constantly changing work patterns and norms, and the need for
+              organizational resiliency
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div class="box">
+            <div class="heading">
+              <a href="#"><i class="fa-solid fa-earth-africa"></i></a>
+              <a href="#"
+                ><h1>Data Science Specialist, Analytics Division</h1></a
+              >
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              nihil quos illum, cum id minima necessitatibus praesentium!
+              Sapiente, beatae perferendis.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div class="box">
+            <div class="heading">
+              <a href="#"><i class="fa-solid fa-chart-line"></i></a>
+              <a href="#"><h1>Product Marketing Manager, Growth Team</h1></a>
+            </div>
+            <p>
+              Crafting compelling marketing strategies to drive user acquisition
+              and retention
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+
+          <div class="box">
+            <div class="heading">
+              <a href="#"><i class="fa-solid fa-truck-field"></i></a>
+              <a href="#"><h1>Operations Manager, Supply Chain Division</h1></a>
+            </div>
+            <p>
+              Ensuring smooth and efficient supply chain operations for timely
+              product delivery
+            </p>
+            <a href="#">Learn More </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------Core values--------------------------------------- -->
+
+    <section class="about">
+      <div class="container">
+        <div class="about-content">
+          <h1>Core Values</h1>
+          <p>
+            Have questions, or want to discuss your real estate or investment
+            goals? You can reach our dedicated team at (021) 35169915. We're
+            here to answer your inquiries, provide expert advice, and guide you
+            through your journey to real estate and financial success
+          </p>
+        </div>
+        <div class="arrow">
+          <i class="ri-arrow-down-double-fill"></i>
+        </div>
+      </div>
+
+      <div class="customer-values-container">
+        <div class="customer-values">
+          <div class="about-content">
+            <h1 class="customers-heading">
+              <i class="ri-check-line"></i> Customer First
+            </h1>
+            <p>
+              At Choudhary Group of Companies, we take pride in our commitment
+              to excellence, professionalism, and personalized service. With
+              years of experience and a deep understanding of the real estate
+              and investment landscape, we're here to help you navigate the
+              market, make informed decisions, and achieve your financial goals.
+            </p>
+            <hr />
+          </div>
+        </div>
+
+        <div class="customer-values">
+          <div class="about-content">
+            <h1 class="customers-heading">
+              <i class="ri-check-line"></i> Act With Integrity
+            </h1>
+            <p>
+              We’re honest, transparent and committed to doing what’s best for
+              our customers and our company. We openly collaborate in pursuit of
+              the truth. We have no tolerance for politics, hidden agendas or
+              passive-aggressive behavior.
+            </p>
+            <hr />
+          </div>
+        </div>
+
+        <div class="customer-values">
+          <div class="about-content">
+            <h1 class="customers-heading">
+              <i class="ri-check-line"></i> Make a Difference Every Day
+            </h1>
+            <p>
+              Our company exists to help merchants sell more. We make every
+              decision and measure every outcome based on how well it serves our
+              customers.
+            </p>
+            <hr />
+          </div>
+        </div>
+
+        <div class="customer-values">
+          <div class="about-content">
+            <h1 class="customers-heading">
+              <i class="ri-check-line"></i> Think Big
+            </h1>
+            <p>
+              Being the world leading commerce platform requires unrivaled
+              vision, innovation and execution. We never settle. We challenge
+              our ideas of what’s possible in order to better meet the needs of
+              our customers.
+            </p>
+            <hr />
+          </div>
+        </div>
+
+        <div class="customer-values">
+          <div class="about-content">
+            <h1 class="customers-heading">
+              <i class="ri-check-line"></i>
+              Do the right thing
+            </h1>
+            <p>
+              Integrity is the foundation for everything we do. We are admired
+              and respected for our commitment to honesty, trust, and
+              transparency.
+            </p>
+            <hr />
+          </div>
+        </div>
+
+        <div class="customer-values">
+          <div class="about-content">
+            <h1 class="customers-heading">
+              <i class="ri-check-line"></i> Stronger united
+            </h1>
+            <p>
+              We’ve created a positive and inclusive culture that fosters open,
+              honest, and meaningful relationships.
+            </p>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------talk--------------------------------------- -->
+    <section class="about">
+      <div class="story-container">
+        <div class="mission-img">
+          <img src="images/3249754.jpg" alt="" />
+        </div>
+        <div class="about-content">
+          <h3>Want to talk to a <span>marketing</span> expert?</h3>
+          <p>
+            You need to create an account to find the best and preferred job.
+            lorem Ipsum is simply dummy text of the printing and typesetting
+            industry the standard dummy text ever took.
+          </p>
+          <a href="contact.html" class="Btn"></a>
+        </div>
+      </div>
+    </section>
+
+    <!----------------------------------------- Banner ------------------------------------------->
+    <section class="banner">
+      <div class="container">
+        <div class="services-content">
+          <h1>Lets Explore this world</h1>
+          <p>
+            "Embark on your next adventure with confidence and ease. Let us turn
+            your travel dreams into unforgettable experiences."
+          </p>
+          <a href="#" class="Btn"></a>
+        </div>
+        <div class="box">
+          <div class="services-content">
+            <h1>NewsLetter</h1>
+            <p>Subscribe For latest Updates</p>
+          </div>
+          <form action="" id="newsletter">
+            <input
+              type="email"
+              id="email"
+              name=""
+              placeholder="Drop your email"
+              class="newsletter"
+            />
+            <button class="send-btn">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!----------------------------------------- Footer ------------------------------------------->
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" />
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <div class="footer-info-container">
+            <div class="address">
+              <i class="ri-map-pin-2-fill"></i>
+              <p>
+                Floor, plot # C, M-1, Mezzanine, 11 28th St, Tauheed Commercial
+                Area Defence V Defence Housing Authority, Karachi, Karachi City,
+                Sindh 75500
+              </p>
+            </div>
+          </div>
+
+          <div class="footer-info-container">
+            <div class="tele">
+              <i class="ri-phone-fill"></i>
+              <a href="tel:+923353036639">Tel:+92-335-3036639</a>
+              <a href="tel:+923353036639">Fax:+92-335-3036639</a>
+            </div>
+          </div>
+
+          <div class="footer-info-container">
+            <div class="mail">
+              <i class="ri-mail-unread-fill"></i>
+              <a href="mailto:hamzashakeeldurrani77@gmail.com"
+                >hamzashakeeldurrani77@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="socials">
+          <div class="facebook-cover">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </div>
+          <div class="insta-cover">
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copywrite"><span>Hadi-Travels</span> | all rights reserved</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

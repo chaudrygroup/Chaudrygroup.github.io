@@ -1,0 +1,317 @@
+:root {
+  --gold-color: #c6974a;
+  --black-color: #0d0d0d;
+  --white-color: #fff;
+  --light-color: #aaa;
+  --bg-color: #222;
+  --black-bg: rgba(17, 17, 17, 0.7);
+  --border: 0.2rem solid #c6974a;
+}
+
+.team .services-content {
+  margin-top: 15rem;
+  text-align: center;
+}
+
+.card {
+  --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  width: 35rem;
+  height: 45rem;
+  padding: 5px;
+  border-radius: 1rem;
+  overflow: visible;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(25px);
+  background: #f7ba2b;
+  background: var(--background);
+  transition: opacity 0.5s;
+}
+
+.card-info {
+  --color: #181818;
+  background: url(images/team1.jpg);
+  width: 500px;
+  height: 300px;
+  background-size: cover;
+  /* color: var(--color); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0.7rem;
+  z-index: 5;
+}
+
+.card-info2 {
+  background: url(images/team2.jpg);
+  width: 500px;
+  height: 300px;
+  background-size: cover;
+  /* color: var(--color); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0.7rem;
+  z-index: 5;
+}
+.card-info3 {
+  background: url(images/team3.jpg);
+  width: 500px;
+  height: 300px;
+  background-size: cover;
+  /* color: var(--color); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0.7rem;
+  z-index: 5;
+}
+.card-info4 {
+  background: url(images/team4.jpg);
+  width: 500px;
+  height: 300px;
+  background-size: cover;
+  /* color: var(--color); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  border-radius: 0.7rem;
+  z-index: 5;
+}
+
+.card .title {
+  font-size: 2.5rem;
+  margin-top: 25rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: var(--gold-color);
+}
+
+.card .sub-title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+/*Hover*/
+.card:hover::after {
+  opacity: 0;
+}
+
+.card:hover .sub-title {
+  color: var(--gold-color);
+  transition: color 0.3s;
+}
+
+/* --------------------ceo words----------------- */
+
+.card2 {
+  margin-bottom: 20rem;
+  width: 30rem;
+  height: 53rem;
+  background: #171717;
+  transition: 1s ease-in-out;
+  clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0% 30px
+  );
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.card2 span {
+  font-weight: bold;
+  color: var(--gold-color);
+  text-align: center;
+  display: block;
+  font-size: 3rem;
+  /* margin: 1rem 0; */
+}
+
+.card2 .info {
+  font-weight: 400;
+  color: var(--light-color);
+  display: block;
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 1em;
+}
+
+.card2 .img {
+  width: 17rem;
+  height: 20rem;
+  background: white;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.card2 .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card2 .insta-share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  color: var(--white-color);
+}
+
+.card2 a {
+  color: var(--gold-color);
+  transition: 0.2s ease-in-out;
+}
+
+.card2 a:hover {
+  color: var(--white-color);
+}
+
+.card2 button {
+  padding: 0.8em 1.7em;
+  display: block;
+  margin: auto;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  transition: 0.4s ease-in-out;
+}
+
+.card2 button:hover {
+  background: var(--gold-color);
+  color: var(--black-color);
+  cursor: pointer;
+}
+
+.core-values-container {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(32, 32, 32) 0px,
+    rgb(32, 32, 32) 2px,
+    rgb(33, 33, 33) 2px,
+    rgb(33, 33, 33) 4px,
+    rgb(34, 34, 34) 4px,
+    rgb(34, 34, 34) 6px,
+    rgb(33, 33, 33) 6px,
+    rgb(33, 33, 33) 8px,
+    rgb(36, 36, 36) 8px,
+    rgb(36, 36, 36) 10px,
+    rgb(35, 35, 35) 10px,
+    rgb(35, 35, 35) 12px,
+    rgb(33, 33, 33) 12px,
+    rgb(33, 33, 33) 14px,
+    rgb(32, 32, 32) 14px,
+    rgb(32, 32, 32) 16px,
+    rgb(36, 36, 36) 16px,
+    rgb(36, 36, 36) 18px,
+    rgb(34, 34, 34) 18px,
+    rgb(34, 34, 34) 20px,
+    rgb(35, 35, 35) 20px,
+    rgb(35, 35, 35) 22px,
+    rgb(35, 35, 35) 22px,
+    rgb(35, 35, 35) 24px
+  );
+  /* margin-bottom: 20rem; */
+}
+
+.core-values-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.core2 {
+  color: var(--white-color);
+}
+.core2 .heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.core2 .heading i {
+  color: green;
+  font-size: 2rem;
+}
+.core2 .heading h1 {
+  font-size: 3rem;
+  color: var(--gold-color);
+}
+.core2 p {
+  font-size: 1.4rem;
+  color: var(--light-color);
+  margin: 1.5rem;
+}
+
+/* ----------------------------------------------------Breakpoints------------------------------------ */
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .core-values-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+    place-content: center;
+    place-items: center;
+  }
+}
