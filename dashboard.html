@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Page</title>
+</head>
+<body>
+    <div id="userDataDisplay"></div>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Upload Image</button>
+  
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+
+    <script src="firebase.js"></script>
+    <script>
+    // Retrieve userEmail from local storage
+    var userEmail = localStorage.getItem('loggedInUserEmail');
+    if (userEmail) {
+        // Convert email to lowercase
+        userEmail = userEmail.toLowerCase();
+        var modifiedEmail = userEmail.replace(/\./g, ',');
+       
+        // Replace period with comma in the userEmail
+       
+
+        // Use modifiedEmail to access the specific container in Firebase
+        var userRef = firebase.database().ref('users/' + modifiedEmail);
+
+        userRef.once('value').then(function(snapshot) {
+            var userData = snapshot.val();
+            console.log("userData", userData); // Log userData to check if data is retrieved
+
+            // Display user email and name
+            if (userData) {
+                var email = userData.email;
+                var name = userData.name;
+                var imageUrl = userData.imageUrlk || "https://th.bing.com/th/id/R.ae68a6da3633369482b25a3ad0836885?rik=Briz%2fuyfS5axCQ&pid=ImgRaw&r=0"; // If imageUrlk doesn't exist, use a dummy image
+                var userDetails = "Email from Firebase: " + email + "<br>Name: " + name + "<br>Image: <img src='" + imageUrl + "'>";
+                var userDetailsDisplay = document.createElement("div");
+                userDetailsDisplay.innerHTML = userDetails;
+                document.getElementById("userDataDisplay").appendChild(userDetailsDisplay);
+            } else {
+                var noDataDisplay = document.createElement("div");
+                noDataDisplay.innerText = "No user data found for this email in Firebase.";
+                document.getElementById("userDataDisplay").appendChild(noDataDisplay);
+            }
+        }).catch(function(error) {
+            console.error("Error fetching data from Firebase:", error);
+            var errorDisplay = document.createElement("div");
+            errorDisplay.innerText = "Error fetching data from Firebase: " + error.message;
+            document.getElementById("userDataDisplay").appendChild(errorDisplay);
+        });
+    } else {
+        console.error("User email not found in local storage.");
+        var noEmailDisplay = document.createElement("div");
+        noEmailDisplay.innerText = "User email not found in local storage.";
+        document.getElementById("userDataDisplay").appendChild(noEmailDisplay);
+    }
+
+    // Function to handle image upload
+    function uploadImage() {
+        var imageInput = document.getElementById("imageInput");
+        var file = imageInput.files[0]; // Get the selected file
+
+        if (file) {
+            // Create a reference to the storage location
+            var storageRef = firebase.storage().ref().child('images/' + userEmail + '/' + file.name);
+
+            // Upload file to the storage location
+            storageRef.put(file).then(function(snapshot) {
+                console.log('File uploaded successfully');
+                // Get the download URL of the uploaded file
+                storageRef.getDownloadURL().then(function(url) {
+                    console.log('File available at', url);
+                    // Update the imageUrlk in the database with the URL of the uploaded image
+                    userRef.update({
+                        imageUrlk: url
+                    }).then(function() {
+                        console.log('Image URL updated successfully in the database');
+                    }).catch(function(error) {
+                        console.error('Error updating image URL:', error);
+                    });
+                }).catch(function(error) {
+                    console.error('Error getting download URL:', error);
+                });
+            }).catch(function(error) {
+                console.error('Error uploading file:', error);
+            });
+        } else {
+            console.error('No file selected');
+        }
+    }
+    </script>
+</body>
+</html>
