@@ -25,8 +25,8 @@ function login(event) {
       });
 }
 
-function register(event2) {
-  event2.preventDefault();
+function register(event) {
+  event.preventDefault();
   var regEmail = document.getElementById("emailr").value.toLowerCase(); // Convert email to lowercase
   var regPassword = document.getElementById("passwordr").value;
   var regName = document.getElementById("namer").value;
