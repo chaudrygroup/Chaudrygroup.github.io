@@ -7,6 +7,8 @@
 </head>
 <body>
     <div id="userDataDisplay"></div>
+    <br>
+    <h1>Update profile picture</h1>
     <input type="file" id="imageInput" accept="image/*">
     <button onclick="uploadImage()">Upload Image</button>
   
@@ -41,7 +43,7 @@
                 var email = userData.email;
                 var name = userData.name;
                 var imageUrl = userData.imageUrlk || "https://th.bing.com/th/id/R.ae68a6da3633369482b25a3ad0836885?rik=Briz%2fuyfS5axCQ&pid=ImgRaw&r=0"; // If imageUrlk doesn't exist, use a dummy image
-                var userDetails = "Email from Firebase: " + email + "<br>Name: " + name + "<br>Image: <img src='" + imageUrl + "'>";
+                var userDetails = "Email: " + email + "<br>Name: " + name + "<br>profile pic: <img src='" + imageUrl + "'>";
                 var userDetailsDisplay = document.createElement("div");
                 userDetailsDisplay.innerHTML = userDetails;
                 document.getElementById("userDataDisplay").appendChild(userDetailsDisplay);
@@ -83,6 +85,7 @@
                         imageUrlk: url
                     }).then(function() {
                         console.log('Image URL updated successfully in the database');
+                        location.reload();
                     }).catch(function(error) {
                         console.error('Error updating image URL:', error);
                     });
