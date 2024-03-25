@@ -283,3 +283,26 @@
   gap: 5rem;
   margin-bottom: 10rem;
 }
+
+/* ----------------------------------------------------------Breakpoints------------------------------------- */
+@media (max-width: 450px) {
+  .property-manage-image {
+    top: 91%;
+  }
+
+  .property-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .services-pg {
+    margin-top: -7rem;
+  }
+
+  .services-content {
+    margin-top: 15rem;
+  }
+
+  .marketing-container {
+    flex-direction: column;
+  }
+}

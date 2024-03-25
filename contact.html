@@ -16,7 +16,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="contact.html" />
+    <link rel="stylesheet" href="contact.css" />
   </head>
   <body>
     <!-- -----------------------------------------Header--------------------------------------- -->
@@ -89,16 +89,26 @@
     </div>
 
     <!-- ---------------------------------Contact Us---------------------------- -->
-    <div
-      class="visme_d"
-      data-title="Untitled Project"
-      data-url="q6p6pey9-untitled-project"
-      data-domain="forms"
-      data-full-page="false"
-      data-min-height="900px"
-      data-form-id="47191"
-    ></div>
-    <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+
+    <div class="form-container">
+      <div class="form">
+        <span class="heading">Get in touch</span>
+        <input placeholder="Name" type="text" class="input" />
+        <input placeholder="Email" id="mail" type="email" class="input" />
+        <textarea
+          placeholder="Say Hello"
+          rows="10"
+          cols="30"
+          id="message"
+          name="message"
+          class="textarea"
+        ></textarea>
+        <div class="button-container">
+          <div class="send-button">Send</div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

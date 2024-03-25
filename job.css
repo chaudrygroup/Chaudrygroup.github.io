@@ -1,0 +1,38 @@
+:root {
+  --gold-color: #c6974a;
+  --black-color: #0d0d0d;
+  --white-color: #fff;
+  --light-color: #aaa;
+  --bg-color: #222;
+  --black-bg: rgba(17, 17, 17, 0.7);
+  --border: 0.2rem solid #c6974a;
+}
+
+.job .services-content {
+  margin-top: 12rem;
+  text-align: center;
+}
+
+.job-des {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.job-des p {
+  color: var(--light-color);
+  font-size: 2rem;
+}
+.job-des strong {
+  color: var(--gold-color);
+  font-size: 2.5rem;
+}
+
+.job-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  align-items: center;
+}

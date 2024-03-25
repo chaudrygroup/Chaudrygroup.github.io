@@ -81,6 +81,7 @@ label {
   border: var(--border);
   outline: none;
   border-radius: 4px;
+  text-transform: none;
 }
 
 /*Register*/
@@ -163,6 +164,7 @@ label {
   outline: none;
   border-radius: 4px;
   margin-left: 20rem;
+  text-transform: none;
 }
 
 .visme_d {

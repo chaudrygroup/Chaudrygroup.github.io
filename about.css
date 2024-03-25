@@ -245,7 +245,7 @@
   }
 
   .terms-section .logo img {
-    width: 38rem;
+    width: 40rem !important;
   }
 
   .table-terms-container {
