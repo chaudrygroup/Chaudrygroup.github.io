@@ -89,12 +89,11 @@
     </div>
 
     <!-- ---------------------------------Contact Us---------------------------- -->
-
     <div class="form-container">
-      <div class="form">
+      <form id="contactForm" class="form">
         <span class="heading">Get in touch</span>
-        <input placeholder="Name" type="text" class="input" />
-        <input placeholder="Email" id="mail" type="email" class="input" />
+        <input placeholder="Name" id="name" type="text" class="input" />
+        <input placeholder="Email" id="email" type="email" class="input" />
         <textarea
           placeholder="Say Hello"
           rows="10"
@@ -104,11 +103,17 @@
           class="textarea"
         ></textarea>
         <div class="button-container">
-          <div class="send-button">Send</div>
+          <button type="submit" class="send-button">Send</button>
         </div>
-      </div>
+      </form>
     </div>
-
-    <script src="script.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="firebase.js"></script>
+    <script src="contact.js"></script>
+    scr
   </body>
 </html>
