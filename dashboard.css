@@ -8,16 +8,16 @@
   --border: 0.2rem solid #c6974a;
 }
 
-.userDataDisplay {
+#userDataDisplay {
   color: white;
   padding: 3rem 9%;
   display: flex;
 }
-.userDataDisplay div {
+#userDataDisplay div {
   font-size: 3rem;
   line-height: 8rem;
 }
-.userDataDisplay img {
+#userDataDisplay img {
   width: 27rem;
   height: 27rem;
   border-radius: 50%;
