@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Data Page</title>
-<<<<<<< HEAD
+
 </head>
 <body>
     <div id="userDataDisplay"></div>
@@ -13,7 +13,7 @@
     <input type="file" id="imageInput" accept="image/*">
     <button onclick="uploadImage()">Upload Image</button>
   
-=======
+
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -127,9 +127,9 @@
         <button class="btn" onclick="uploadImage()">Upload Image</button>
       </div>
     </div>
-
+    <button id="signOutButton">Sign Out</button>
     <!-- ---------------------------------- backend start ----------------------------------- -->
->>>>>>> 950bed0 (WEB-WIZ-DURRANI 👑)
+
 
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
@@ -139,159 +139,132 @@
 
     <script src="firebase.js"></script>
     <script>
-      // Retrieve userEmail from local storage
-      var userEmail = localStorage.getItem("loggedInUserEmail");
-      if (userEmail) {
-        // Convert email to lowercase
-        userEmail = userEmail.toLowerCase();
-        var modifiedEmail = userEmail.replace(/\./g, ",");
+      console.log(document.getElementById("userDataDisplay"));
 
-        // Replace period with comma in the userEmail
+      document.addEventListener("DOMContentLoaded", function() {
+// Retrieve userEmail from local storage
+var userEmail = localStorage.getItem("loggedInUserEmail");
+if (userEmail) {
+  // Convert email to lowercase
+  userEmail = userEmail.toLowerCase();
+  var modifiedEmail = userEmail.replace(/\./g, ",");
 
-        // Use modifiedEmail to access the specific container in Firebase
-        var userRef = firebase.database().ref("users/" + modifiedEmail);
+  // Use modifiedEmail to access the specific container in Firebase
+  var userRef = firebase.database().ref("users/" + modifiedEmail);
 
-        userRef
-          .once("value")
-          .then(function (snapshot) {
-            var userData = snapshot.val();
-            console.log("userData", userData); // Log userData to check if data is retrieved
+  userRef
+    .once("value")
+    .then(function (snapshot) {
+      var userData = snapshot.val();
+      console.log("userData", userData); // Log userData to check if data is retrieved
 
-            // Display user email and name
-            if (userData) {
-<<<<<<< HEAD
-                var email = userData.email;
-                var name = userData.name;
-                var imageUrl = userData.imageUrlk || "https://th.bing.com/th/id/R.ae68a6da3633369482b25a3ad0836885?rik=Briz%2fuyfS5axCQ&pid=ImgRaw&r=0"; // If imageUrlk doesn't exist, use a dummy image
-                var userDetails = "Email: " + email + "<br>Name: " + name + "<br>profile pic: <img src='" + imageUrl + "'>";
-                var userDetailsDisplay = document.createElement("div");
-                userDetailsDisplay.innerHTML = userDetails;
-                document.getElementById("userDataDisplay").appendChild(userDetailsDisplay);
-=======
-              var email = userData.email;
-              var name = userData.name;
-              var imageUrl =
-                userData.imageUrlk ||
-                "https://th.bing.com/th/id/R.ae68a6da3633369482b25a3ad0836885?rik=Briz%2fuyfS5axCQ&pid=ImgRaw&r=0"; // If imageUrlk doesn't exist, use a dummy image
-              var userDetails =
-                "Your Email: " +
-                email +
-                "<br>Your Name: " +
-                name +
-                "<br class=profile-img-line >Your Profile Image: <img src='" +
-                imageUrl +
-                "'>";
-              var userDetailsDisplay = document.createElement("div");
-              userDetailsDisplay.innerHTML = userDetails;
-              document
-                .getElementById("userDataDisplay")
-                .appendChild(userDetailsDisplay);
->>>>>>> 950bed0 (WEB-WIZ-DURRANI 👑)
-            } else {
-              var noDataDisplay = document.createElement("div");
-              noDataDisplay.innerText =
-                "No user data found for this email in Firebase.";
-              document
-                .getElementById("userDataDisplay")
-                .appendChild(noDataDisplay);
-            }
-          })
-          .catch(function (error) {
-            console.error("Error fetching data from Firebase:", error);
-            var errorDisplay = document.createElement("div");
-            errorDisplay.innerText =
-              "Error fetching data from Firebase: " + error.message;
-            document
-              .getElementById("userDataDisplay")
-              .appendChild(errorDisplay);
-          });
+      // Display user email and name
+      if (userData) {
+        var email = userData.email;
+        var name = userData.name;
+        var imageUrl = userData.imageUrlk || "https://th.bing.com/th/id/R.ae68a6da3633369482b25a3ad0836885?rik=Briz%2fuyfS5axCQ&pid=ImgRaw&r=0"; // If imageUrlk doesn't exist, use a dummy image
+
+        var userDetails =
+          "Your Email: " +
+          email +
+          "<br>Your Name: " +
+          name +
+          "<br class=profile-img-line >Your Profile Image: <img src='" +
+          imageUrl +
+          "'>";
+        var userDetailsDisplay = document.createElement("div");
+        userDetailsDisplay.innerHTML = userDetails;
+        document.getElementById("userDataDisplay").appendChild(userDetailsDisplay);
       } else {
-        console.error("User email not found in local storage.");
-        var noEmailDisplay = document.createElement("div");
-        noEmailDisplay.innerText = "User email not found in local storage.";
-        document.getElementById("userDataDisplay").appendChild(noEmailDisplay);
+        var noDataDisplay = document.createElement("div");
+        noDataDisplay.innerText =
+          "No user data found for this email in Firebase.";
+        document
+          .getElementById("userDataDisplay")
+          .appendChild(noDataDisplay);
       }
+    })
+    .catch(function (error) {
+      console.error("Error fetching data from Firebase:", error);
+      var errorDisplay = document.createElement("div");
+      errorDisplay.innerText =
+        "Error fetching data from Firebase: " + error.message;
+      document
+        .getElementById("userDataDisplay")
+        .appendChild(errorDisplay);
+    });
+} else {
+  console.error("User email not found in local storage.");
+  var noEmailDisplay = document.createElement("div");
+  noEmailDisplay.innerText = "User email not found in local storage.";
+  document.getElementById("userDataDisplay").appendChild(noEmailDisplay);
+}
 
-      // Function to handle image upload
-      function uploadImage() {
-        var imageInput = document.getElementById("imageInput");
-        var file = imageInput.files[0]; // Get the selected file
+// Function to handle image upload
+function uploadImage() {
+  var imageInput = document.getElementById("imageInput");
+  var file = imageInput.files[0]; // Get the selected file
 
-        if (file) {
-          // Create a reference to the storage location
-          var storageRef = firebase
-            .storage()
-            .ref()
-            .child("images/" + userEmail + "/" + file.name);
+  if (file) {
+    // Create a reference to the storage location
+    var storageRef = firebase
+      .storage()
+      .ref()
+      .child("images/" + userEmail + "/" + file.name);
 
-<<<<<<< HEAD
-            // Upload file to the storage location
-            storageRef.put(file).then(function(snapshot) {
-                console.log('File uploaded successfully');
-                // Get the download URL of the uploaded file
-                storageRef.getDownloadURL().then(function(url) {
-                    console.log('File available at', url);
-                    // Update the imageUrlk in the database with the URL of the uploaded image
-                    userRef.update({
-                        imageUrlk: url
-                    }).then(function() {
-                        console.log('Image URL updated successfully in the database');
-                        location.reload();
-                    }).catch(function(error) {
-                        console.error('Error updating image URL:', error);
-=======
-          // Upload file to the storage location
-          storageRef
-            .put(file)
-            .then(function (snapshot) {
-              console.log("File uploaded successfully");
-              // Get the download URL of the uploaded file
-              storageRef
-                .getDownloadURL()
-                .then(function (url) {
-                  console.log("File available at", url);
-                  // Update the imageUrlk in the database with the URL of the uploaded image
-                  userRef
-                    .update({
-                      imageUrlk: url,
-                    })
-                    .then(function () {
-                      console.log(
-                        "Image URL updated successfully in the database"
-                      );
-                    })
-                    .catch(function (error) {
-                      console.error("Error updating image URL:", error);
->>>>>>> 950bed0 (WEB-WIZ-DURRANI 👑)
-                    });
-                })
-                .catch(function (error) {
-                  console.error("Error getting download URL:", error);
-                });
-            })
-            .catch(function (error) {
-              console.error("Error uploading file:", error);
-            });
-        } else {
-          console.error("No file selected");
-        }
-      }
+    // Upload file to the storage location
+    storageRef.put(file).then(function(snapshot) {
+      console.log('File uploaded successfully');
+      // Get the download URL of the uploaded file
+      storageRef.getDownloadURL().then(function(url) {
+        console.log('File available at', url);
+        // Update the imageUrlk in the database with the URL of the uploaded image
+        userRef.update({
+          imageUrlk: url
+        }).then(function() {
+          console.log('Image URL updated successfully in the database');
+          location.reload();
+        }).catch(function(error) {
+          console.error('Error updating image URL:', error);
+        });
+      }).catch(function(error) {
+        console.error('Error getting download URL:', error);
+      });
+    }).catch(function(error) {
+      console.error('Error uploading file:', error);
+    });
+  } else {
+    console.error('No file selected');
+  }
+}
 
-      // --------------------------------------------------Sidebar------------------------------------------
-      function openNav() {
-        const sidePanel = document.getElementById("mysidepanel");
-        if (sidePanel) {
-          sidePanel.style.left = "0";
-        } else {
-          console.error("sidepanel not found");
-        }
-      }
-      function closeNav() {
-        const sidePanel = document.getElementById("mysidepanel");
-        if (sidePanel) {
-          sidePanel.style.left = "-320px";
-        }
-      }
+// --------------------------------------------------Sidebar------------------------------------------
+function openNav() {
+  const sidePanel = document.getElementById("mysidepanel");
+  if (sidePanel) {
+    sidePanel.style.left = "0";
+  } else {
+    console.error("sidepanel not found");
+  }
+}
+
+function closeNav() {
+  const sidePanel = document.getElementById("mysidepanel");
+  if (sidePanel) {
+    sidePanel.style.left = "-320px";
+  }
+}
+});
+// Get a reference to the sign-out button
+const signOutButton = document.querySelector("#signOutButton");
+
+// Add click event listener to the sign-out button
+signOutButton.addEventListener("click", function() {
+    // Clear the email from localStorage
+    localStorage.removeItem("loggedInUserEmail");
+    
+   window.location.href = "login.html";
+});
     </script>
   </body>
 </html>
