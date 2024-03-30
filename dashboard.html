@@ -27,6 +27,51 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+
+    <script src="firebase.js"></script>
+  <script>
+    function uploadImage() {
+  var imageInput = document.getElementById("imageInput");
+  var file = imageInput.files[0]; // Get the selected file
+
+  if (file) {
+    // Create a reference to the storage location
+    var storageRef = firebase
+      .storage()
+      .ref()
+      .child("images/" + userEmail + "/" + file.name);
+
+    // Upload file to the storage location
+    storageRef.put(file).then(function(snapshot) {
+      console.log('File uploaded successfully');
+      // Get the download URL of the uploaded file
+      storageRef.getDownloadURL().then(function(url) {
+        console.log('File available at', url);
+        // Update the imageUrlk in the database with the URL of the uploaded image
+        userRef.update({
+          imageUrlk: url
+        }).then(function() {
+          console.log('Image URL updated successfully in the database');
+          location.reload();
+        }).catch(function(error) {
+          console.error('Error updating image URL:', error);
+        });
+      }).catch(function(error) {
+        console.error('Error getting download URL:', error);
+      });
+    }).catch(function(error) {
+      console.error('Error uploading file:', error);
+    });
+  } else {
+    console.error('No file selected');
+  }
+}
+  </script>
   </head>
   <body>
     <!-- -----------------------------------------Header--------------------------------------- -->
@@ -131,13 +176,7 @@
     <!-- ---------------------------------- backend start ----------------------------------- -->
 
 
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
-
-    <script src="firebase.js"></script>
+    
     <script>
       console.log(document.getElementById("userDataDisplay"));
 
@@ -201,42 +240,6 @@ if (userEmail) {
 }
 
 // Function to handle image upload
-function uploadImage() {
-  var imageInput = document.getElementById("imageInput");
-  var file = imageInput.files[0]; // Get the selected file
-
-  if (file) {
-    // Create a reference to the storage location
-    var storageRef = firebase
-      .storage()
-      .ref()
-      .child("images/" + userEmail + "/" + file.name);
-
-    // Upload file to the storage location
-    storageRef.put(file).then(function(snapshot) {
-      console.log('File uploaded successfully');
-      // Get the download URL of the uploaded file
-      storageRef.getDownloadURL().then(function(url) {
-        console.log('File available at', url);
-        // Update the imageUrlk in the database with the URL of the uploaded image
-        userRef.update({
-          imageUrlk: url
-        }).then(function() {
-          console.log('Image URL updated successfully in the database');
-          location.reload();
-        }).catch(function(error) {
-          console.error('Error updating image URL:', error);
-        });
-      }).catch(function(error) {
-        console.error('Error getting download URL:', error);
-      });
-    }).catch(function(error) {
-      console.error('Error uploading file:', error);
-    });
-  } else {
-    console.error('No file selected');
-  }
-}
 
 // --------------------------------------------------Sidebar------------------------------------------
 function openNav() {
