@@ -35,42 +35,52 @@
 
     <script src="firebase.js"></script>
   <script>
-    function uploadImage() {
-  var imageInput = document.getElementById("imageInput");
-  var file = imageInput.files[0]; // Get the selected file
-
-  if (file) {
-    // Create a reference to the storage location
-    var storageRef = firebase
-      .storage()
-      .ref()
-      .child("images/" + userEmail + "/" + file.name);
-
-    // Upload file to the storage location
-    storageRef.put(file).then(function(snapshot) {
-      console.log('File uploaded successfully');
-      // Get the download URL of the uploaded file
-      storageRef.getDownloadURL().then(function(url) {
-        console.log('File available at', url);
-        // Update the imageUrlk in the database with the URL of the uploaded image
-        userRef.update({
-          imageUrlk: url
-        }).then(function() {
-          console.log('Image URL updated successfully in the database');
-          location.reload();
+   function uploadImage() {
+  var userEmail = localStorage.getItem("loggedInUserEmail");
+  if (userEmail) {
+    // Convert email to lowercase
+    userEmail = userEmail.toLowerCase();
+    var modifiedEmail = userEmail.replace(/\./g, ",");
+    
+    // Use modifiedEmail to access the specific container in Firebase
+    var userRef = firebase.database().ref("users/" + modifiedEmail);
+    var imageInput = document.getElementById("imageInput");
+    var file = imageInput.files[0]; // Get the selected file
+    
+    if (file) {
+      // Create a reference to the storage location
+      var storageRef = firebase
+        .storage()
+        .ref()
+        .child("images/" + userEmail + "/" + file.name);
+      
+      // Upload file to the storage location
+      storageRef.put(file).then(function(snapshot) {
+        console.log('File uploaded successfully');
+        // Get the download URL of the uploaded file
+        storageRef.getDownloadURL().then(function(url) {
+          console.log('File available at', url);
+          // Update the imageUrlk in the database with the URL of the uploaded image
+          userRef.update({
+            imageUrlk: url
+          }).then(function() {
+            console.log('Image URL updated successfully in the database');
+            location.reload();
+          }).catch(function(error) {
+            console.error('Error updating image URL:', error);
+          });
         }).catch(function(error) {
-          console.error('Error updating image URL:', error);
+          console.error('Error getting download URL:', error);
         });
       }).catch(function(error) {
-        console.error('Error getting download URL:', error);
+        console.error('Error uploading file:', error);
       });
-    }).catch(function(error) {
-      console.error('Error uploading file:', error);
-    });
-  } else {
-    console.error('No file selected');
+    } else {
+      console.error('No file selected');
+    }
   }
 }
+
   </script>
   </head>
   <body>
